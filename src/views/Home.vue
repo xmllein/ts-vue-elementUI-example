@@ -37,17 +37,35 @@
       <el-button type="warning" icon="el-icon-star-off" circle></el-button>
       <el-button type="danger" icon="el-icon-delete" circle></el-button>
     </el-row>
+		<p>{{user.username}}</p>
+		<p>{{uidname}}</p>
+    <el-button type="primary" @click="onClick">操作vuex-class</el-button>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
+import { User } from "@/store/types";
+import { State, Getter, Action } from "vuex-class";
 
 @Component({
   components: {
     HelloWorld
   }
 })
-export default class Home extends Vue {}
+export default class Home extends Vue {
+  @Action("user/foo") private actionFoo!: () => void;
+  @State(state => state.user) private user!: User;
+  @Getter("user/uidname") private uidname!: string;
+
+  public created() {
+    console.log(this.uidname);
+  }
+
+  public onClick() {
+    this.actionFoo();
+    console.log(this.uidname);
+  }
+}
 </script>
