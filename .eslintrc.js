@@ -7,18 +7,7 @@ module.exports = {
   rules: {
     "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
-    "quotes": 0,
-    "semi": 0,
-    "arrow-parens": 0,
-	  "prettier/prettier": [
-		  "warn",
-		  {
-			  "#": "prettier config in here :)",
-			  "singleQuote": true,
-			  "semi": false,
-			  "trailingComma": "none"
-		  }
-	  ]
+    "prettier/prettier": ["warn", {}]
   },
   parserOptions: {
     parser: "@typescript-eslint/parser"

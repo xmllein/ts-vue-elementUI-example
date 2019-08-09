@@ -1,10 +1,10 @@
 <template>
-  <div class="test-wrap">{{data.componentName}}</div>
+  <div class="test-wrap">{{ data.componentName }}</div>
 </template>
 
 <script lang="ts">
 import { Component, Vue, Prop } from "vue-property-decorator";
-import { Getter, Action } from 'vuex-class'
+import { Getter, Action } from "vuex-class";
 import { TestData } from "@/types/components/test.interface";
 // import {  } from "@/components" // 组件
 
